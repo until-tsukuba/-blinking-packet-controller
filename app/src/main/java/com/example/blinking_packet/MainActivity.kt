@@ -80,20 +80,20 @@ class MainActivity : AppCompatActivity() {
     // パケットタイプを取得する
     private fun getPacketType(): PacketType {
         return when(tabLayout.selectedTabPosition) {
-            0 -> PacketType.ARP
-            1 -> PacketType.PING
-            2 -> PacketType.HTTP
+            // 0 -> PacketType.ARP
+            0 -> PacketType.PING
+            1 -> PacketType.HTTP
             else -> PacketType.DNS
         }
     }
 
     // リクエストを送信する
     private fun postRequest(packetType: PacketType, value: String): Deferred<Boolean> = GlobalScope.async {
-        val url = "https://www.example.com/"
-        var connection: HttpsURLConnection? = null
+        val url = "http://192.168.11.148/emit"
+        var connection: HttpURLConnection? = null
 
         try {
-            connection = URL(url).openConnection() as HttpsURLConnection
+            connection = URL(url).openConnection() as HttpURLConnection
             connection.instanceFollowRedirects = false
             connection.requestMethod = "POST"
             connection.doOutput = true

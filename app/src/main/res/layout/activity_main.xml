@@ -37,11 +37,11 @@
             app:tabGravity="fill"
             app:tabMode="fixed">
 
-            <com.google.android.material.tabs.TabItem
+            <!--<com.google.android.material.tabs.TabItem
                 android:id="@+id/tab_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ARP" />
+                android:text="ARP" />-->
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab_second"

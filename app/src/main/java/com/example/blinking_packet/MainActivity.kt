@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("HTTP_POST", url)
             Log.d("HTTP_POST", json)
             Log.d("HTTP_POST", responseCode.toString())
-            if (responseCode != HttpURLConnection.HTTP_OK) {
+            if (responseCode != HttpURLConnection.HTTP_OK && responseCode != HttpURLConnection.HTTP_NO_CONTENT) {
                 return@async false
             }
             connection.inputStream.bufferedReader().use {
